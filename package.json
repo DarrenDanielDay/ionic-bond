@@ -16,7 +16,8 @@
   },
   "keywords": [
     "immutable",
-    "state management"
+    "state management",
+    "react utility"
   ],
   "author": {
     "email": "Darren_Daniel_Day@hotmail.com",
