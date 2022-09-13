@@ -14,7 +14,7 @@ describe("bond", () => {
       };
     }
     const idx = 2;
-    const b = solvent<Nested>().ionze((n) => n.a.d.e[idx].f);
+    const b = solvent<Nested>().ionize((n) => n.a.d.e[idx].f);
     const obj: Nested = {
       a: {
         b: { c: 1 },
@@ -44,22 +44,22 @@ describe("bond", () => {
   it("should throw error for invalid usage", () => {
     expect(() => {
       solvent<{ fn: () => void }>()
-        .ionze((a) => a.fn)
+        .ionize((a) => a.fn)
         .dissolve({ fn() {} });
     }).toThrow(/function/i);
     expect(() => {
       solvent<string[]>()
-        .ionze((a) => a[0].length)
+        .ionize((a) => a[0].length)
         .dissolve(["aaa"]);
     }).toThrow(/primitive/i);
     expect(() => {
       solvent<{ tag?: string }>()
-        .ionze((a) => a.tag)
+        .ionize((a) => a.tag)
         .dissolve({});
     }).toThrow(/unknown prop/i);
     expect(() => {
       solvent<string[]>()
-        .ionze((a) => {
+        .ionize((a) => {
           const arr = [a[0]];
           arr.pop();
           return "aaa";
@@ -71,7 +71,7 @@ describe("bond", () => {
         b = 1;
       }
       solvent<A>()
-        .ionze((a) => a.b)
+        .ionize((a) => a.b)
         .dissolve(new A());
     }).toThrow(/class/i);
   });

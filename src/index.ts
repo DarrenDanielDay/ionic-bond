@@ -9,7 +9,7 @@ export type Solution<S extends Salt, I> = {
 };
 
 export const solvent = <S extends Salt>() => ({
-  ionze: <I>(ionization: Ionization<S, I>) => {
+  ionize: <I>(ionization: Ionization<S, I>) => {
     return {
       dissolve: (salt: S) => {
         return {
