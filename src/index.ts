@@ -1,14 +1,11 @@
-export interface Ionization<S extends Salt, I> {
+type Ionization<S extends Salt, I> = {
   (salt: S): I;
-}
-export type Salt = object;
-export type Bond = PropertyKey;
-export type Suspension = [Salt, Salt, Bond];
-export type Solution<S extends Salt, I> = {
-  crystallize(this: void, ion: I): S;
 };
+type Salt = object;
+type Bond = PropertyKey;
+type Suspension = [Salt, Salt, Bond];
 
-export const solvent = <S extends Salt>() => ({
+const solvent = <S extends Salt>() => ({
   ionize: <I>(ionization: Ionization<S, I>) => {
     return {
       dissolve: (salt: S) => {
@@ -72,3 +69,5 @@ const dissolveWith = <S extends Salt, I>(salt: S, ionization: Ionization<S, I>) 
   }
   return (ion: I): S => crystalizeDirectives.reduce<any>((previousSalt, directive) => directive(previousSalt), ion);
 };
+
+export { solvent };
