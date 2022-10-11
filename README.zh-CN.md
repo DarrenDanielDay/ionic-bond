@@ -1,6 +1,8 @@
 # ionic-bond
 
-![logo.png](./logo.png)
+<div style="text-align: center">
+  <img src="./logo.png" />
+</div>
 
 [English](./README.md) | 简体中文
 

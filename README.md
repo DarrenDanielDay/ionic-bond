@@ -1,6 +1,10 @@
 # ionic-bond
 
-![logo.png](./logo.png)
+<div align="center">
+  <img src="./logo.png" />
+</div>
+
+<!-- ![logo.png](./logo.png) -->
 
 English | [简体中文](./README.zh-CN.md)
 
